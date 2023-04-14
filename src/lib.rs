@@ -1,3 +1,15 @@
+macro_rules! generate_tests {
+    ($($name:ident, $func:ident, $args:expr, $expected:expr);* $(;)?) => {
+        $(
+            #[test]
+            fn $name() {
+                let result = $func($args);
+                assert_eq!(result, $expected);
+            }
+        )*
+    };
+}
+
 pub fn add(left: usize, right: usize) -> usize {
     left + right
 }
@@ -61,27 +73,11 @@ mod tests {
         assert_eq!(result, 4);
     }
 
-    #[test]
-    fn sum_of_multiples_of_3_or_5_till_10() {
-        let result = problem_1(10);
-        assert_eq!(result, 23);
-    }
+    generate_tests!(
+        sum_of_multiples_of_3_or_5_till_10, problem_1, 10, 23;
+        sum_of_even_fib_numbers, problem_2, 90, 44;
+        largest_prime_factor, problem_3, 13195, 29;
+        largest_palindrome_product, problem_4, 2, 9009;
+    );
 
-    #[test]
-    fn sum_of_even_fib_numbers() {
-        let result = problem_2(90);
-        assert_eq!(result, 44);
-    }
-
-    #[test]
-    fn largest_prime_factor() {
-        let result = problem_3(13195 );
-        assert_eq!(result, 29)
-    }
-
-    #[test]
-    fn largest_palindrome_product() {
-        let result = problem_4(2);
-        assert_eq!(result, 9009)
-    }
 }
