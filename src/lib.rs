@@ -83,7 +83,6 @@ pub fn problem_4(no_of_digits: u32) -> i32 {
 
     let mut cart = vec![];
 
-
     for i in numbers.clone() {
         for j in numbers.clone() {
             cart.push((i, j));
