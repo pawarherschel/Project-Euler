@@ -1,3 +1,4 @@
+#[allow(unused_macros)]
 macro_rules! generate_tests {
     ($($name:ident, $func:ident, $args:expr, $expected:expr);* $(;)?) => {
         $(
@@ -56,8 +57,50 @@ pub fn problem_3(number: i64) -> i64 {
 
 /// <p>A palindromic number reads the same both ways. The largest palindrome made from the product of two 2-digit numbers is 9009 = 91 × 99.</p>
 /// <p>Find the largest palindrome made from the product of two 3-digit numbers.</p>
-pub fn problem_4(no_of_digits: i32) -> i32 {
-    no_of_digits
+pub fn problem_4(no_of_digits: u32) -> i32 {
+    fn max_from_digits(digits: u32) -> i32 {
+        i32::pow(10, digits) - 1
+    }
+    fn min_from_digits(digits: u32) -> i32 {
+        i32::pow(10, digits - 1)
+    }
+    fn is_palindrome(number: i32) -> bool {
+        let mut num = number;
+        let mut rev = 0;
+
+        while num != 0 {
+            rev = rev * 10 + num % 10;
+            num /= 10;
+        }
+
+        rev == number
+    }
+
+    let min = min_from_digits(no_of_digits);
+    let max = max_from_digits(no_of_digits);
+
+    let numbers: Vec<i32> = (min..=max).collect();
+
+    let mut cart = vec![];
+
+
+    for i in numbers.clone() {
+        for j in numbers.clone() {
+            cart.push((i, j));
+        }
+    }
+
+    let possible: Vec<(_, _)> = cart
+        .into_iter()
+        .filter(|&(n, m)| {
+            let prod = n * m;
+            is_palindrome(prod)
+        })
+        .collect();
+
+    let mut prods: Vec<i32> = possible.iter().map(|(n, m)| n * m).collect();
+    prods.sort();
+    *prods.last().unwrap()
 }
 
 #[cfg(test)]
