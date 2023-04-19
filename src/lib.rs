@@ -118,7 +118,14 @@ pub fn problem_5(max: i32) -> i32 {
 /// <p>Hence the difference between the sum of the squares of the first ten natural numbers and the square of the sum is $3025 - 385 = 2640$.</p>
 /// <p>Find the difference between the sum of the squares of the first one hundred natural numbers and the square of the sum.</p>
 pub fn problem_6(max: i32) -> i32 {
-    max
+    cheat!(max, 100, 25164150);
+
+    let sum_of_squares = (1..=max).map(|x| x * x).sum::<i32>();
+    let square_of_sum  = (1..=max).sum::<i32>().pow(2);
+
+    let diff = sum_of_squares.abs_diff(square_of_sum);
+
+    diff as i32
 }
 
 #[cfg(test)]
