@@ -2,6 +2,9 @@
 name = "project-euler"
 version = "0.1.0"
 edition = "2021"
+exclude = [
+    "src/zaphkiel.rs"
+]
 
 [dev-dependencies]
 clipboard-win = "4.5.0"
