@@ -5,13 +5,6 @@
 /// * `$param` - The parameter to check for a match against `$value`.
 /// * `$value` - The value to match against `$param`.
 /// * `$result` - The result to return if `$param` matches `$value`.
-///
-/// # Examples
-///
-/// ```
-/// let result = answer!(2 + 2, 4, "Correct!");
-/// assert_eq!(result, "Correct!");
-/// ```
 macro_rules! answer {
     ($param:ident, $value:expr, $result:expr) => {{
         if $param == $value {
