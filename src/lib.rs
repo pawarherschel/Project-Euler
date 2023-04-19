@@ -121,7 +121,7 @@ pub fn problem_6(max: i32) -> i32 {
     cheat!(max, 100, 25164150);
 
     let sum_of_squares = (1..=max).map(|x| x * x).sum::<i32>();
-    let square_of_sum  = (1..=max).sum::<i32>().pow(2);
+    let square_of_sum = (1..=max).sum::<i32>().pow(2);
 
     let diff = sum_of_squares.abs_diff(square_of_sum);
 
