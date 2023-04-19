@@ -10,7 +10,6 @@ pub fn add(left: usize, right: usize) -> usize {
     left + right
 }
 
-
 /// Problem 1: [Multiples of 3 or 5]
 ///
 /// [Multiples of 3 or 5]: https://projecteuler.net/problem=1
@@ -245,8 +244,6 @@ pub fn problem_10(max: u32) -> u64 {
 
     (1..max as u64).filter(|&x| is_prime(x)).sum()
 }
-
-euler_problem!(11);
 
 #[cfg(test)]
 mod tests {
