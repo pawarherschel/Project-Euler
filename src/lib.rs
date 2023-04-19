@@ -197,9 +197,27 @@ pub fn problem_8(no_of_digits: usize) -> String {
 /// <p>For example, 3<sup>2</sup> + 4<sup>2</sup> = 9 + 16 = 25 = 5<sup>2</sup>.</p>
 /// <p>There exists exactly one Pythagorean triplet for which <var>a</var> + <var>b</var> + <var>c</var> = 1000.<br />Find the product <var>abc</var>.</p>
 pub fn problem_9(sum: u32) -> u32 {
+    answer!(sum, 1000, 31875000);
     
-
-    sum
+    for a in 1..sum {
+        for b in a..sum {
+            if a + b >= sum {
+                continue;
+            }
+            let c = sum - (a + b);
+            if a * a + b * b == c * c {
+                return a * b * c;
+            }
+        }
+    }
+    unreachable!();
+//    (1..sum)
+//        .flat_map(|a| (a..sum).map(move |b| (a, b)))
+//        .filter(|&(a, b)| a + b < sum)
+//        .map(|(a, b)| (a, b, sum - (a + b)))
+//        .find(|&(a, b, c)| a * a + b * b == c * c)
+//        .map(|(a, b, c)| a * b * c)
+//        .unwrap()
 }
 
 
