@@ -141,10 +141,7 @@ pub fn problem_7(number: usize) -> u64 {
         (2..sqrt_number).all(|i| number % i != 0)
     }
 
-    (2u64..)
-        .filter(|x| is_prime(*x))
-        .nth(number - 1)
-        .unwrap()
+    (2u64..).filter(|x| is_prime(*x)).nth(number - 1).unwrap()
 }
 
 /// <p>The four adjacent digits in the 1000-digit number that have the greatest product are 9 × 9 × 8 × 9 = 5832.</p>
@@ -198,7 +195,7 @@ pub fn problem_8(no_of_digits: usize) -> String {
 /// <p>There exists exactly one Pythagorean triplet for which <var>a</var> + <var>b</var> + <var>c</var> = 1000.<br />Find the product <var>abc</var>.</p>
 pub fn problem_9(sum: u32) -> u32 {
     answer!(sum, 1000, 31875000);
-    
+
     for a in 1..sum {
         for b in a..sum {
             if a + b >= sum {
@@ -211,25 +208,24 @@ pub fn problem_9(sum: u32) -> u32 {
         }
     }
     unreachable!();
-//    (1..sum)
-//        .flat_map(|a| (a..sum).map(move |b| (a, b)))
-//        .filter(|&(a, b)| a + b < sum)
-//        .map(|(a, b)| (a, b, sum - (a + b)))
-//        .find(|&(a, b, c)| a * a + b * b == c * c)
-//        .map(|(a, b, c)| a * b * c)
-//        .unwrap()
+    //    (1..sum)
+    //        .flat_map(|a| (a..sum).map(move |b| (a, b)))
+    //        .filter(|&(a, b)| a + b < sum)
+    //        .map(|(a, b)| (a, b, sum - (a + b)))
+    //        .find(|&(a, b, c)| a * a + b * b == c * c)
+    //        .map(|(a, b, c)| a * b * c)
+    //        .unwrap()
 }
-
 
 #[cfg(test)]
 mod tests {
     use super::*;
 
-    #[test]
-    fn it_works() {
-        let result = add(2, 2);
-        assert_eq!(result, 4);
-    }
+    //    #[test]
+    //    fn it_works() {
+    //        let result = add(2, 2);
+    //        assert_eq!(result, 4);
+    //    }
 
     generate_tests![
         multiples_of_3_or_5, problem_1, 10, 23;
