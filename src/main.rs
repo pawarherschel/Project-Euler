@@ -9,15 +9,18 @@ macro_rules! answers {
             answers.push(format!("Problem {}: {:?}", _count, result));
             _count += 1;
         )*
-        println!("{:?}", answers.iter().rev().collect::<Vec<_>>());
+        let answers_rev = answers.clone().into_iter().rev().collect::<Vec<_>>();
+        dbg!(&answers_rev);
+        answers_rev
     }}
 }
 
 fn main() {
-    answers![
+    let _answers = answers![
         problem_1(1000);
         problem_2(4_000_000);
         problem_3(600851475143);
         problem_4(3);
+        problem_5(20);
     ];
 }
