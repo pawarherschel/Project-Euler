@@ -219,10 +219,22 @@ pub fn problem_9(sum: u32) -> u32 {
 
 /// <p>The sum of the primes below 10 is 2 + 3 + 5 + 7 = 17.</p>
 /// <p>Find the sum of all the primes below two million.</p>
-pub fn problem_10(max: u32) -> u32 {
+pub fn problem_10(max: u32) -> u64 {
+    answer!(max, 2_000_000, 142913828922);
 
+    fn is_prime(number: u64) -> bool {
+        if number < 2 {
+            false
+        } else {
+            let sqrt = (number as f64).sqrt().floor() as u64 + 1;
+            (2..sqrt)
+                .all(|i| number % i != 0)
+        }
+    }
 
-    max
+    (1..max as u64)
+        .filter(|&x| is_prime(x))
+        .sum()
 }
 
 
