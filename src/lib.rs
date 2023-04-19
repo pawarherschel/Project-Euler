@@ -91,7 +91,7 @@ pub fn problem_4(no_of_digits: u32) -> i32 {
 /// <p>2520 is the smallest number that can be divided by each of the numbers from 1 to 10 without any remainder.</p>
 /// <p>What is the smallest positive number that is <dfn title="divisible with no remainder">evenly divisible</dfn> by all of the numbers from 1 to 20?</p>
 pub fn problem_5(max: i32) -> i32 {
-    (max..).find(|i|(2..=max).all(|j| i % j == 0)).unwrap()
+    (max..).find(|i| (2..=max).all(|j| i % j == 0)).unwrap()
 }
 
 #[cfg(test)]
