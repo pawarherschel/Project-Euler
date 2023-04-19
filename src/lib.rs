@@ -139,8 +139,8 @@ mod tests {
     }
 
     generate_tests![
-        sum_of_multiples_of_3_or_5_till_10, problem_1, 10, 23;
-        sum_of_even_fib_numbers, problem_2, 90, 44;
+        multiples_of_3_or_5, problem_1, 10, 23;
+        even_fibonacci_numbers, problem_2, 90, 44;
         largest_prime_factor, problem_3, 13195, 29;
         largest_palindrome_product, problem_4, 2, 9009;
         smallest_multiple, problem_5, 10, 2520;
