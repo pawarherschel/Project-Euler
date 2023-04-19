@@ -1,2 +1,6 @@
 /target
 /Cargo.lock
+/.rustc_info.json
+/.rustdoc_fingerprint.json
+/release/
+.idea

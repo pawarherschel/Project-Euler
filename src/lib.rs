@@ -1,3 +1,17 @@
+/// A macro that returns a result if the provided parameter matches a specified value.
+///
+/// # Arguments
+///
+/// * `$param` - The parameter to check for a match against `$value`.
+/// * `$value` - The value to match against `$param`.
+/// * `$result` - The result to return if `$param` matches `$value`.
+///
+/// # Examples
+///
+/// ```
+/// let result = answer!(2 + 2, 4, "Correct!");
+/// assert_eq!(result, "Correct!");
+/// ```
 macro_rules! answer {
     ($param:ident, $value:expr, $result:expr) => {{
         if $param == $value {
@@ -6,9 +20,9 @@ macro_rules! answer {
     }};
 }
 
-pub fn add(left: usize, right: usize) -> usize {
-    left + right
-}
+//pub fn add(left: usize, right: usize) -> usize {
+//    left + right
+//}
 
 /// Problem 1: [Multiples of 3 or 5]
 ///

@@ -3,6 +3,7 @@ name = "project-euler"
 version = "0.1.0"
 edition = "2021"
 
+
 [dev-dependencies]
 clipboard-win = "4.5.0"
 reqwest = { version = "0.11.16", features = ["blocking"] }
