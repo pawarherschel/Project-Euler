@@ -227,16 +227,12 @@ pub fn problem_10(max: u32) -> u64 {
             false
         } else {
             let sqrt = (number as f64).sqrt().floor() as u64 + 1;
-            (2..sqrt)
-                .all(|i| number % i != 0)
+            (2..sqrt).all(|i| number % i != 0)
         }
     }
 
-    (1..max as u64)
-        .filter(|&x| is_prime(x))
-        .sum()
+    (1..max as u64).filter(|&x| is_prime(x)).sum()
 }
-
 
 #[cfg(test)]
 mod tests {
