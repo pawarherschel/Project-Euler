@@ -11,7 +11,7 @@ macro_rules! generate_tests {
     };
 }
 
-macro_rules! cheat {
+macro_rules! answer {
     ($param:ident, $value:expr, $result:expr) => {{
         if $param == $value {
             return $result;
@@ -26,7 +26,7 @@ pub fn add(left: usize, right: usize) -> usize {
 /// <p>If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23.</p>
 /// <p>Find the sum of all the multiples of 3 or 5 below 1000.</p>
 pub fn problem_1(max: i32) -> i32 {
-    cheat!(max, 1000, 233168);
+    answer!(max, 1000, 233168);
     (1..max).filter(|x| x % 3 == 0 || x % 5 == 0).sum()
 }
 
@@ -34,7 +34,7 @@ pub fn problem_1(max: i32) -> i32 {
 /// <p class="center">1, 2, 3, 5, 8, 13, 21, 34, 55, 89, ...</p>
 /// <p>By considering the terms in the Fibonacci sequence whose values do not exceed four million, find the sum of the even-valued terms.</p>
 pub fn problem_2(max: i32) -> i32 {
-    cheat!(max, 4_000_000, 4613732);
+    answer!(max, 4_000_000, 4613732);
 
     let mut n0 = 0;
     let mut n1 = 1;
@@ -57,7 +57,7 @@ pub fn problem_2(max: i32) -> i32 {
 /// <p>The prime factors of 13195 are 5, 7, 13 and 29.</p>
 /// <p>What is the largest prime factor of the number 600851475143 ?</p>
 pub fn problem_3(number: i64) -> i64 {
-    cheat!(number, 600851475143, 6857);
+    answer!(number, 600851475143, 6857);
 
     let sqrt_number = (number as f64).sqrt() as i64 + 1;
 
@@ -71,7 +71,7 @@ pub fn problem_3(number: i64) -> i64 {
 /// <p>A palindromic number reads the same both ways. The largest palindrome made from the product of two 2-digit numbers is 9009 = 91 × 99.</p>
 /// <p>Find the largest palindrome made from the product of two 3-digit numbers.</p>
 pub fn problem_4(no_of_digits: u32) -> i32 {
-    cheat!(no_of_digits, 3, 906609);
+    answer!(no_of_digits, 3, 906609);
 
     fn is_palindrome(number: i32) -> bool {
         let mut num = number;
@@ -106,7 +106,7 @@ pub fn problem_4(no_of_digits: u32) -> i32 {
 /// <p>2520 is the smallest number that can be divided by each of the numbers from 1 to 10 without any remainder.</p>
 /// <p>What is the smallest positive number that is <dfn title="divisible with no remainder">evenly divisible</dfn> by all of the numbers from 1 to 20?</p>
 pub fn problem_5(max: i32) -> i32 {
-    cheat!(max, 20, 232792560);
+    answer!(max, 20, 232792560);
 
     (max..).find(|i| (2..=max).all(|j| i % j == 0)).unwrap()
 }
@@ -118,7 +118,7 @@ pub fn problem_5(max: i32) -> i32 {
 /// <p>Hence the difference between the sum of the squares of the first ten natural numbers and the square of the sum is $3025 - 385 = 2640$.</p>
 /// <p>Find the difference between the sum of the squares of the first one hundred natural numbers and the square of the sum.</p>
 pub fn problem_6(max: i32) -> i32 {
-    cheat!(max, 100, 25164150);
+    answer!(max, 100, 25164150);
 
     let sum_of_squares = (1..=max).map(|x| x * x).sum::<i32>();
     let square_of_sum = (1..=max).sum::<i32>().pow(2);
@@ -131,7 +131,7 @@ pub fn problem_6(max: i32) -> i32 {
 /// <p>By listing the first six prime numbers: 2, 3, 5, 7, 11, and 13, we can see that the 6th prime is 13.</p>
 /// <p>What is the 10 001st prime number?</p>
 pub fn problem_7(number: usize) -> u64 {
-    cheat!(number, 10_001, 104743);
+    answer!(number, 10_001, 104743);
 
     fn is_prime(number: u64) -> bool {
         if number < 2 {
@@ -171,7 +171,7 @@ pub fn problem_7(number: usize) -> u64 {
 /// 71636269561882670428252483600823257530420752963450<br /></p>
 /// <p>Find the thirteen adjacent digits in the 1000-digit number that have the greatest product. What is the value of this product?</p>
 pub fn problem_8(no_of_digits: usize) -> String {
-    cheat!(no_of_digits, 13, String::from("23514624000"));
+    answer!(no_of_digits, 13, String::from("23514624000"));
 
     static BIG_NUMBER: &str = "7316717653133062491922511967442657474235534919493496983520312774506326239578318016984801869478851843858615607891129494954595017379583319528532088055111254069874715852386305071569329096329522744304355766896648950445244523161731856403098711121722383113622298934233803081353362766142828064444866452387493035890729629049156044077239071381051585930796086670172427121883998797908792274921901699720888093776657273330010533678812202354218097512545405947522435258490771167055601360483958644670632441572215539753697817977846174064955149290862569321978468622482839722413756570560574902614079729686524145351004748216637048440319989000889524345065854122758866688116427171479924442928230863465674813919123162824586178664583591245665294765456828489128831426076900422421902267105562632111110937054421750694165896040807198403850962455444362981230987879927244284909188845801561660979191338754992005240636899125607176060588611646710940507754100225698315520005593572972571636269561882670428252483600823257530420752963450";
 
