@@ -31,6 +31,7 @@ pub fn problem_1(max: i32) -> i32 {
 /// <p class="center">1, 2, 3, 5, 8, 13, 21, 34, 55, 89, ...</p>
 /// <p>By considering the terms in the Fibonacci sequence whose values do not exceed four million, find the sum of the even-valued terms.</p>
 ///
+///
 /// Answer: 4613732
 pub fn problem_2(max: i32) -> i32 {
     answer!(max, 4_000_000, 4613732);
@@ -52,12 +53,15 @@ pub fn problem_2(max: i32) -> i32 {
     }
     sum
 }
+
 /// Problem 3: [Largest prime factor]
 ///
 /// [Largest prime factor]: https://projecteuler.net/problem=3
 ///
 /// <p>The prime factors of 13195 are 5, 7, 13 and 29.</p>
 /// <p>What is the largest prime factor of the number 600851475143 ?</p>
+///
+///
 ///
 /// Answer: 6857
 pub fn problem_3(number: i64) -> i64 {
@@ -76,8 +80,10 @@ pub fn problem_3(number: i64) -> i64 {
 ///
 /// [Largest palindrome product]: https://projecteuler.net/problem=4
 ///
+///
 /// <p>A palindromic number reads the same both ways. The largest palindrome made from the product of two 2-digit numbers is 9009 = 91 × 99.</p>
 /// <p>Find the largest palindrome made from the product of two 3-digit numbers.</p>
+///
 ///
 /// Answer: 906609
 pub fn problem_4(no_of_digits: u32) -> i32 {
@@ -113,20 +119,33 @@ pub fn problem_4(no_of_digits: u32) -> i32 {
     max_product
 }
 
+/// Problem 5: [Smallest multiple]
+///
+/// [Smallest multiple]: https://projecteuler.net/problem=5
+///
 /// <p>2520 is the smallest number that can be divided by each of the numbers from 1 to 10 without any remainder.</p>
 /// <p>What is the smallest positive number that is <dfn title="divisible with no remainder">evenly divisible</dfn> by all of the numbers from 1 to 20?</p>
+///
+///
+/// Answer: 232792560
 pub fn problem_5(max: i32) -> i32 {
     answer!(max, 20, 232792560);
 
     (max..).find(|i| (2..=max).all(|j| i % j == 0)).unwrap()
 }
 
+/// Problem 6: [Sum square difference]
+///
+/// [Sum square difference]: https://projecteuler.net/problem=6
+///
 /// <p>The sum of the squares of the first ten natural numbers is,</p>
 /// $$1^2 + 2^2 + ... + 10^2 = 385$$
 /// <p>The square of the sum of the first ten natural numbers is,</p>
 /// $$(1 + 2 + ... + 10)^2 = 55^2 = 3025$$
 /// <p>Hence the difference between the sum of the squares of the first ten natural numbers and the square of the sum is $3025 - 385 = 2640$.</p>
 /// <p>Find the difference between the sum of the squares of the first one hundred natural numbers and the square of the sum.</p>
+///
+/// Answer: 25164150
 pub fn problem_6(max: i32) -> i32 {
     answer!(max, 100, 25164150);
 
@@ -138,8 +157,15 @@ pub fn problem_6(max: i32) -> i32 {
     diff as i32
 }
 
+/// Problem 7: [10001st prime]
+///
+/// [10001st prime]: https://projecteuler.net/problem=7
+///
 /// <p>By listing the first six prime numbers: 2, 3, 5, 7, 11, and 13, we can see that the 6th prime is 13.</p>
 /// <p>What is the 10 001st prime number?</p>
+///
+///
+/// Answer: 104743
 pub fn problem_7(number: usize) -> u64 {
     answer!(number, 10_001, 104743);
 
@@ -154,7 +180,10 @@ pub fn problem_7(number: usize) -> u64 {
     (2u64..).filter(|x| is_prime(*x)).nth(number - 1).unwrap()
 }
 
-/// https://projecteuler.net/problem=8
+/// Problem 8: [Largest product in a series]
+///
+/// [Largest product in a series]: https://projecteuler.net/problem=8
+///
 /// <p>The four adjacent digits in the 1000-digit number that have the greatest product are 9 × 9 × 8 × 9 = 5832.</p>
 /// <p class="monospace center">
 /// 73167176531330624919225119674426574742355349194934<br />
@@ -178,8 +207,10 @@ pub fn problem_7(number: usize) -> u64 {
 /// 05886116467109405077541002256983155200055935729725<br />
 /// 71636269561882670428252483600823257530420752963450<br /></p>
 /// <p>Find the thirteen adjacent digits in the 1000-digit number that have the greatest product. What is the value of this product?</p>
-pub fn problem_8(no_of_digits: usize) -> String {
-    answer!(no_of_digits, 13, String::from("23514624000"));
+///
+/// Answer: 23514624000
+pub fn problem_8(no_of_digits: usize) -> u64 {
+    answer!(no_of_digits, 13, 23514624000);
 
     static BIG_NUMBER: &str = "7316717653133062491922511967442657474235534919493496983520312774506326239578318016984801869478851843858615607891129494954595017379583319528532088055111254069874715852386305071569329096329522744304355766896648950445244523161731856403098711121722383113622298934233803081353362766142828064444866452387493035890729629049156044077239071381051585930796086670172427121883998797908792274921901699720888093776657273330010533678812202354218097512545405947522435258490771167055601360483958644670632441572215539753697817977846174064955149290862569321978468622482839722413756570560574902614079729686524145351004748216637048440319989000889524345065854122758866688116427171479924442928230863465674813919123162824586178664583591245665294765456828489128831426076900422421902267105562632111110937054421750694165896040807198403850962455444362981230987879927244284909188845801561660979191338754992005240636899125607176060588611646710940507754100225698315520005593572972571636269561882670428252483600823257530420752963450";
 
@@ -197,13 +228,19 @@ pub fn problem_8(no_of_digits: usize) -> String {
         .max_by_key(|&(_, p)| p)
         .unwrap()
         .1
-        .to_string()
 }
 
+/// Problem 9: [Special Pythagorean triplet]
+///
+/// [Special Pythagorean triplet]: https://projecteuler.net/problem=9
+///
 /// <p>A Pythagorean triplet is a set of three natural numbers, <var>a</var> &lt; <var>b</var> &lt; <var>c</var>, for which,</p>
 /// <div class="center"> <var>a</var><sup>2</sup> + <var>b</var><sup>2</sup> = <var>c</var><sup>2</sup></div>
 /// <p>For example, 3<sup>2</sup> + 4<sup>2</sup> = 9 + 16 = 25 = 5<sup>2</sup>.</p>
 /// <p>There exists exactly one Pythagorean triplet for which <var>a</var> + <var>b</var> + <var>c</var> = 1000.<br />Find the product <var>abc</var>.</p>
+///
+///
+/// Answer: 31875000
 pub fn problem_9(sum: u32) -> u32 {
     answer!(sum, 1000, 31875000);
 
@@ -228,8 +265,17 @@ pub fn problem_9(sum: u32) -> u32 {
     //        .unwrap()
 }
 
+/// Problem 10: [Summation of primes]
+///
+/// [Summation of primes]: https://projecteuler.net/problem=10
+///
 /// <p>The sum of the primes below 10 is 2 + 3 + 5 + 7 = 17.</p>
 /// <p>Find the sum of all the primes below two million.</p>
+///
+///
+///
+///
+/// Answer: 142913828922
 pub fn problem_10(max: u32) -> u64 {
     answer!(max, 2_000_000, 142913828922);
 
@@ -275,7 +321,7 @@ mod tests {
         smallest_multiple, problem_5, 10, 2520;
         sum_square_difference, problem_6, 10, 2640;
         the_10001st_prime, problem_7, 6, 13;
-        largest_product_in_a_series, problem_8, 4, String::from("5832");
+        largest_product_in_a_series, problem_8, 4, 5832;
         special_pythagorean_triplet, problem_9, 3 + 4 + 5, 3 * 4 * 5;
         summation_of_primes, problem_10, 10, 17;
     ];
