@@ -217,6 +217,15 @@ pub fn problem_9(sum: u32) -> u32 {
     //        .unwrap()
 }
 
+/// <p>The sum of the primes below 10 is 2 + 3 + 5 + 7 = 17.</p>
+/// <p>Find the sum of all the primes below two million.</p>
+pub fn problem_10(max: u32) -> u32 {
+
+
+    max
+}
+
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -237,5 +246,6 @@ mod tests {
         the_10001st_prime, problem_7, 6, 13;
         largest_product_in_a_series, problem_8, 4, String::from("5832");
         special_pythagorean_triplet, problem_9, 3 + 4 + 5, 3 * 4 * 5;
+        summation_of_primes, problem_10, 10, 17;
     ];
 }
