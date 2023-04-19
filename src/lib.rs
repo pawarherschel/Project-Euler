@@ -128,6 +128,14 @@ pub fn problem_6(max: i32) -> i32 {
     diff as i32
 }
 
+/// <p>By listing the first six prime numbers: 2, 3, 5, 7, 11, and 13, we can see that the 6th prime is 13.</p>
+/// <p>What is the 10 001st prime number?</p>
+pub fn problem_7(number: i32) -> i32 {
+
+    number
+}
+
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -145,5 +153,6 @@ mod tests {
         largest_palindrome_product, problem_4, 2, 9009;
         smallest_multiple, problem_5, 10, 2520;
         sum_square_difference, problem_6, 10, 2640;
+        the_10001st_prime, problem_7, 6, 13;
     ];
 }
