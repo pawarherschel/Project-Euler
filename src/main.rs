@@ -1,5 +1,3 @@
-mod zaphkiel;
-
 use project_euler::*;
 
 macro_rules! answers {
