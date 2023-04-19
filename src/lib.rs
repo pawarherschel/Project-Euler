@@ -192,6 +192,17 @@ pub fn problem_8(no_of_digits: usize) -> String {
         .to_string()
 }
 
+/// <p>A Pythagorean triplet is a set of three natural numbers, <var>a</var> &lt; <var>b</var> &lt; <var>c</var>, for which,</p>
+/// <div class="center"> <var>a</var><sup>2</sup> + <var>b</var><sup>2</sup> = <var>c</var><sup>2</sup></div>
+/// <p>For example, 3<sup>2</sup> + 4<sup>2</sup> = 9 + 16 = 25 = 5<sup>2</sup>.</p>
+/// <p>There exists exactly one Pythagorean triplet for which <var>a</var> + <var>b</var> + <var>c</var> = 1000.<br />Find the product <var>abc</var>.</p>
+pub fn problem_9(sum: u32) -> u32 {
+    
+
+    sum
+}
+
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -210,6 +221,7 @@ mod tests {
         smallest_multiple, problem_5, 10, 2520;
         sum_square_difference, problem_6, 10, 2640;
         the_10001st_prime, problem_7, 6, 13;
-        largest_product_in_a_series, problem_8, 4, String::from("9989");
+        largest_product_in_a_series, problem_8, 4, String::from("5832");
+        special_pythagorean_triplet, problem_9, 3 + 4 + 5, 3 * 4 * 5;
     ];
 }
