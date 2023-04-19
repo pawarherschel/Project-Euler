@@ -121,7 +121,6 @@ pub fn problem_6(max: i32) -> i32 {
     max
 }
 
-
 #[cfg(test)]
 mod tests {
     use super::*;
