@@ -8,7 +8,9 @@ macro_rules! answers {
             let result = $problem($args);
             answers.insert(_count, result.to_string());
             _count += 1;
-            )*
+        )*
+        let latest = answers.get(&(&_count - 1)).unwrap();
+        dbg!(latest);
         dbg!(&answers);
         answers
     }}
