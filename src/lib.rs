@@ -1,16 +1,3 @@
-#[allow(unused_macros)]
-macro_rules! generate_tests {
-    ($($name:ident, $func:ident, $args:expr, $expected:expr);* $(;)?) => {
-        $(
-            #[test]
-            fn $name() {
-                let result = $func($args);
-                assert_eq!(result, $expected);
-            }
-        )*
-    };
-}
-
 macro_rules! answer {
     ($param:ident, $value:expr, $result:expr) => {{
         if $param == $value {
@@ -237,6 +224,18 @@ pub fn problem_10(max: u32) -> u64 {
 #[cfg(test)]
 mod tests {
     use super::*;
+
+    macro_rules! generate_tests {
+        ($($name:ident, $func:ident, $args:expr, $expected:expr);* $(;)?) => {
+            $(
+                #[test]
+            fn $name() {
+                    let result = $func($args);
+                    assert_eq!(result, $expected);
+                }
+        )*
+        };
+    }
 
     //    #[test]
     //    fn it_works() {
