@@ -1,5 +1,0 @@
-var searchIndex = JSON.parse('{\
-"project_euler":{"doc":"","t":[14,5,5,5,5,5,5,5,5,5,5],"n":["answer","problem_1","problem_10","problem_2","problem_3","problem_4","problem_5","problem_6","problem_7","problem_8","problem_9"],"q":["project_euler","","","","","","","","","",""],"d":["A macro that returns a result if the provided parameter …","Problem 1: Multiples of 3 or 5","Problem 10: Summation of primes","Problem 2: Even Fibonacci numbers","Problem 3: Largest prime factor","Problem 4: Largest palindrome product","Problem 5: Smallest multiple","Problem 6: Sum square difference","Problem 7: 10001st prime","Problem 8: Largest product in a series","Problem 9: Special Pythagorean triplet"],"i":[0,0,0,0,0,0,0,0,0,0,0],"f":[0,[1,1],[2,3],[1,1],[4,4],[2,1],[1,1],[1,1],[5,3],[5,3],[2,2]],"p":[[15,"i32"],[15,"u32"],[15,"u64"],[15,"i64"],[15,"usize"]]}\
-}');
-if (typeof window !== 'undefined' && window.initSearch) {window.initSearch(searchIndex)};
-if (typeof exports !== 'undefined') {exports.searchIndex = searchIndex};
