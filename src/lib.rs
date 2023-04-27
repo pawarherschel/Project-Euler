@@ -612,9 +612,10 @@ pub fn problem_12(no_of_divisors: u32) -> u32 {
 /// 53503534226472524250874054075591789781264330331690<br /></div>
 ///
 ///
-/// Answer: todo!()
+/// Answer: unimplemented!()
 pub fn problem_13(test: bool) -> String{
     answer!(test, true, "TEST".to_string());
+    answer!(test, false, "unimplemented!()".to_string());
 
     unimplemented!();
 }
