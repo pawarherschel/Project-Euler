@@ -28,5 +28,6 @@ fn main() {
         problem_8(13);
         problem_9(1000);
         problem_10(2_000_000);
+        problem_11(false);
     ];
 }

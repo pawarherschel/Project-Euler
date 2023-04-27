@@ -1,1 +1,0 @@
-window.ALL_CRATES = ["project_euler"];
