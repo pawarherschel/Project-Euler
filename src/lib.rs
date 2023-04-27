@@ -486,9 +486,9 @@ pub fn problem_12(no_of_divisors: u32) -> u32 {
         } else {
             let sqrt = ((number as f64).sqrt().floor()) as u32;
             let no_of_divisors = (1..=sqrt)
-                                    .filter(|x| number % x == 0)
-                                    .collect::<Vec<u32>>()
-                                    .len() as u32;
+                .filter(|x| number % x == 0)
+                .collect::<Vec<u32>>()
+                .len() as u32;
             let no_of_divisors = if sqrt * sqrt == number {
                 no_of_divisors * 2 - 1
             } else {
@@ -500,7 +500,7 @@ pub fn problem_12(no_of_divisors: u32) -> u32 {
 
     (1..)
         .map(|n| (1..=n).sum())
-        .find(|&tri_no| no_of_divisors_for(tri_no) >=  no_of_divisors)
+        .find(|&tri_no| no_of_divisors_for(tri_no) >= no_of_divisors)
         .unwrap()
 }
 
@@ -613,7 +613,7 @@ pub fn problem_12(no_of_divisors: u32) -> u32 {
 ///
 ///
 /// Answer: unimplemented!()
-pub fn problem_13(test: bool) -> String{
+pub fn problem_13(test: bool) -> String {
     answer!(test, true, "TEST".to_string());
     answer!(test, false, "unimplemented!()".to_string());
 
