@@ -635,9 +635,8 @@ pub fn problem_13(test: bool) -> String{
 ///
 /// Answer: todo!()
 pub fn problem_14(_starting_number: u32) -> u32 {
-    // use memoization
     (1..1_000_000);
-    todo!();
+    todo!("use memoization");
 }
 
 #[cfg(test)]
