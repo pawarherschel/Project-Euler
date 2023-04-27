@@ -29,5 +29,6 @@ fn main() {
         problem_9(1000);
         problem_10(2_000_000);
         problem_11(false);
+        problem_12(500);
     ];
 }
