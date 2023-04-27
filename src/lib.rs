@@ -431,7 +431,7 @@ pub fn problem_11(test: bool) -> u32 {
         }
     }
 
-    // top left to bottom right
+    // Top Left to Bottom Right
     for col_no in 0..(no_of_cols - window_size + 1) {
         for row_no in 0..(no_of_rows - window_size + 1) {
             let prod = {
@@ -447,7 +447,7 @@ pub fn problem_11(test: bool) -> u32 {
         }
     }
 
-    //top right to bottom left
+    // Top Right to Bottom Left
     for col_no in (0 + window_size - 1)..no_of_cols {
         for row_no in 0..(no_of_rows - window_size + 1) {
             let prod = {
